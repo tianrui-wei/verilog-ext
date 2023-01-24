@@ -57,7 +57,9 @@
 (require 'verilog-font-lock)
 (require 'verilog-vhier)
 (require 'verilog-flycheck)
-(require 'verilog-lsp)
+(when (require 'lsp nil 'noerror)
+  (require 'verilog-lsp)
+  )
 
 ;; Requires Emacs 29 with tree-sitter support and Verilog grammar
 (when (and (>= emacs-major-version 29)
